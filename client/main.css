@@ -52,9 +52,9 @@ footer.page-footer {
 
 
 .formaLogin{
-  /*background-image: url("cuaderno.jpg");*/
+  background-image: url("cuaderno.jpg");
 
-  background:#fff;
+  /*background:#fff;*/
   color: #000;
   position: fixed;
   top: 60px;
