@@ -1,39 +1,109 @@
 <template name="registrarformul">
- <form action="" method="POST">
-                      <div class="right">
-                         <a href="">X</a>
-                       </div>
-                       
-<br>
-                       <legend>REGISTRE SUS DATOS</legend>
-                      
-                       <div class="input-field"> 
-                         <div class="form-group">
-                           <label class="control-label" for="">Nombre y Apellido</label>
-                           <span class="help-block"></span>
-                           <input type="text" class="form-control" id="" placeholder="Input your Nick or email">
-                         </div>
-                       </div>
+  <form action="" method="POST">
+          <div class="row">
+            <div class="col s11">
+              <legend>REGISTRE SUS DATOS</legend>
+            </div>
+            <div class="col s1">
+              <a href="" id="close">X</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s6">
+              <div class="input-field"> 
+            <div class="form-group">
+              <label class="control-label" for="">Nombres</label>
+              <span class="help-block"></span>
+              <input type="text" class="form-control" name="nombres" id="" placeholder="nombres">
+            </div>
+          </div>
+            </div>
+            <div class="col s6">
+              <div class="input-field"> 
+            <div class="form-group">
+              <label class="control-label" for="">Apellidos</label>
+              <span class="help-block"></span>
+              <input type="text" name="apellidos" class="form-control" id="" placeholder="apellidos">
+            </div>
+          </div>
+            </div>
+          </div>
+        
+
+          <div class="row">
+            <div class="col s6">
+              <div class="input-field"> 
+            <div class="form-group">
+              <label class="control-label" for="">Nick de Usuario</label>
+              <span class="help-block"></span>
+              <input type="text" class="form-control" name="nick" id="" placeholder="nick">
+            </div>
+          </div>
+            </div>
+             <div class="col s6">
+              <div class="input-field"> 
+              <div class="form-group">
+             
+                <select name="carrera">
+                  <option value="Informatica">Informatica</option>
+                  <option value="Arquitectura">Arquitectura</option>
+                  <option value="Civil">Civil</option>
+                  <option value="IngSistemas">Ingenieria de Sistemas</option>
+                  <option value="Derecho">Derecho</option>
+                  <option value="Auditoria">Auditoria</option>
+                </select>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+           <div class="row">
+            <div class="col s6">
+              <div class="input-field"> 
+            <div class="form-group">
+              <label class="control-label" for="">Correo Electronico</label>
+              <span class="help-block"></span>
+              <input type="text" name="email" class="form-control" id="" placeholder="Email">
+            </div>
+          </div>
+            </div>
+  
+            </div>
 
 
-                       <div class="input-field"> 
-                         <div class="form-group">
-                           <label class="control-label" for="">Pais</label>
-                           <span class="help-block"></span>
-                           <input type="text" class="form-control" id="" placeholder="Input your password">
-                         </div>
-                       </div>
-
-                       <div class="row">
-                         <div class="col s6">
-                           <button type="submit" class="btn">Enviar</button>
-                         </div>
-                      <div class="col s6">
-                           <button type="button" id="registrarbtn" class="btn">Registrate</button>
-                         </div>
-                       </div>
-                                    
-                     
-                      </form>
+          <div class="row">
+            <div class="col s6">
+              <div class="input-field"> 
+                <div class="form-group">
+                    <label class="control-label" for="">Contraseña</label>
+                    <span class="help-block"></span>
+                    <input type="password" name="contraseña" class="form-control" id="" placeholder="contraseña">
+                </div>
+              </div>
+            </div>
+            <div class="col s6">
+              <div class="input-field"> 
+                <div class="form-group">
+                    <label class="control-label" for="">Repetir Contraseña</label>
+                    <span class="help-block"></span>
+                    <input type="password" name="repassword" class="form-control" id="" placeholder="rep.contraseña">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s4">
+                <button type="submit" class="btn">CREAR</button>
+            </div>
+            <div class="col s4">
+              
+            </div>
+            <div class="col s4">
+                <button type="button" id="return" class="btn">VOLVER</button>
+              
+            </div>
+          </div>
+        </form>
   
 </template>

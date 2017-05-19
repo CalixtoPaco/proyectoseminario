@@ -1,21 +1,15 @@
-(function($) {
-    $(function() {
-
-        $('.button-collapse').sideNav();
-        $('.parallax').parallax();
-
-    }); // end of document ready
-})(jQuery); // end of jQuery name space
-
-Template.info.onRendered(function() {
-    $('.button-collapse').sideNav();
+Template.info.onRendered(function(){
+	$('.button-collapse').sideNav();
     $('.parallax').parallax();
+    $(".formalogin").css("opacity",0);
 });
 
 
-
-/*var chip = {
-    tag: 'chip content',
-    image: '', //optional
-    id: 1, //optional
-};*/
+Template.info.events({
+	"click #login" : function(){
+		$(".formalogin").css("opacity",1);
+	},
+	"click #logout" : function(){
+		Meteor.logout();
+	}
+})
