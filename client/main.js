@@ -8,8 +8,8 @@ Template.info.onRendered(function(){
 Template.info.events({
 	"click #login" : function(){
 		$(".formalogin").css("opacity",1);
-	},
-	"click #logout" : function(){
-		Meteor.logout();
 	}
+
+	
+
 })
