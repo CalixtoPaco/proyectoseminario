@@ -19,9 +19,15 @@
         <li><a href="#"><i class="material-icons left">perm_phone_msg</i>Contactanos</a></li>        
          <li><a href="#"><i class="material-icons left">grade</i>Acerca de</a></li>
 
+
+         {{#if currentUser}}
+          <li><a href="#" id="logout"><i class="material-icons left">perm_identity</i>Usuario {{username}}</a></li>  
+
+         {{else}}
+
          <li><a href="#" id="login"><i class="material-icons left">perm_identity</i>Ingresa</a></li>  
         
-
+          {{/if}}
 
 
       </ul>

@@ -1,6 +1,6 @@
 Template.logueoformulario.events({
 	"click #registrarbtn" : function(e){
-		e.preventDefault();
+		e.preventDefault(); //previene que el boton se vaya a otro lado 
 		myTemplates.set("registrarformul");
 	}
 	,

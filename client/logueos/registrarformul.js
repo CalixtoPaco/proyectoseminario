@@ -13,14 +13,19 @@ Template.registrarformul.events({
 			"username" : e.target.username.value, //preguntar al inge si esto e correcto o esta mal
 			
 			"email" : e.target.email.value,
-			"password" : e.target.contraseña.value,
+			"password" : e.target.password.value,
 			"profile" : {
-				"carrera" : e.target.carrera.value,
-				"nick" : e.target.nick.value
-				}
-
+			"carrera" : e.target.carrera.value,
+			"nombre" : e.target.nombre.value
+			            }
+               
 			};
-			console.log(user);
+			Accounts.createUser(user,function(e){
+             if(e == undefined) {
+			$(".panelForm").css("opacity",0);				
+			Meteor.loginWithPassword(user.username,user.password);	
+				}
+			});
 			return false;
 	}
 })
