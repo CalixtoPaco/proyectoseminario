@@ -1,3 +1,45 @@
+<template name="itemConnection">
+	<li class="collection-item avatar" id="users_list">
+		<img src="images/yuna.jpg" alt="" class="circle">
+		<span class="title">{{username}}</span>
+		
+	</li>
+</template>
+<template name="msn_template">
+	<div id="contenedor">
+	{{#if ready}}
+		{{#each list_msn}}
+			{{#if idMe}}
+				<div class="row">
+							<div class="col s2">
+								
+							</div>
+							<div class="col s10">
+								<div class="card-panel deep-purple darken-1">
+									<span class="white-text"><B>{{user_source.username}}  </B>
+									{{message}}
+									</span>
+								</div>
+							</div>
+						</div>
+			{{else}}
+				<div class="row">
+							<div class="col s10">
+								<div class="card-panel teal">
+									<span class="white-text"><B>{{user_destination.username}}</B>
+									{{message}}
+									</span>
+								</div>
+							</div>
+						</div>
+			{{/if}}
+			
+		{{/each}}
+	{{else}}
+		<b>is Loadding data...</b>
+	{{/if}}
+	</div>
+</template>
 <template name="templateSupport">
 	<div class="row">
 		<div class="col s4"> 

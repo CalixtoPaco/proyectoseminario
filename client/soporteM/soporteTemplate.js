@@ -8,7 +8,7 @@ Template.msn_template.onRendered(function(){
 		$(".rectangle_hidden").animate({scrollTop:num},500);
 	});
 });
-
+*/
 Template.templateSupport.helpers({
 	ready: function(){
 		return FlowRouter.subsReady("getConnections");
@@ -19,7 +19,7 @@ Template.templateSupport.helpers({
 	user_list: function(){
 		return Meteor.users.findOne({_id:this.idUs});
 	}
-});
+});/*
 Template.templateSupport.events({
 	"submit form": function(e){
 		var msn = e.target.msn.value;
@@ -40,7 +40,7 @@ Template.templateSupport.events({
 		//console.log(obj);
 		/*Meteor.call("addChat",obj,function(){	
 
-		});*//*
+		});*
 		return false;
 	}
 });
