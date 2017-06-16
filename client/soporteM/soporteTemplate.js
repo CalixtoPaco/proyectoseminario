@@ -1,4 +1,4 @@
-/*
+
 Template.msn_template.onRendered(function(){
 	//function test(){
 	//	console.log(" "+$("#contenedor").height());
@@ -8,7 +8,7 @@ Template.msn_template.onRendered(function(){
 		$(".rectangle_hidden").animate({scrollTop:num},500);
 	});
 });
-*/
+
 Template.templateSupport.helpers({
 	ready: function(){
 		return FlowRouter.subsReady("getConnections");
@@ -17,9 +17,9 @@ Template.templateSupport.helpers({
 		return CONNECT.find();
 	},
 	user_list: function(){
-		return Meteor.users.findOne({_id:this.idUs});
+		return Meteor.users.findO({_id:this.idUs});
 	}
-});/*
+});
 Template.templateSupport.events({
 	"submit form": function(e){
 		var msn = e.target.msn.value;
@@ -34,13 +34,13 @@ Template.templateSupport.events({
 			Meteor.call("addChat",obj,function(){
 			});	
 		}else{
-			alert("Debe seleccionar a un usuario primero")
+			alert("Seleccione primero un usuario")
 		}
 		
 		//console.log(obj);
 		/*Meteor.call("addChat",obj,function(){	
 
-		});*
+		});*/
 		return false;
 	}
 });
@@ -74,4 +74,4 @@ Template.msn_template.helpers({
 		return Accounts.user()._id == this.idSource;	
 	}
 
-});	*/
+});	
