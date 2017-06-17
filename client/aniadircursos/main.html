@@ -1,3 +1,45 @@
-<template name="aniadircursos">
-
+<template name="layout">
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+    {{#each list}}
+      {{>frasestemplate}}
+    {{/each}}
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+    {{#if currentUser}}
+      {{>form}}
+    {{else}}
+      {{>loginButtons}}
+    {{/if}}
+  </div>
+</div>
+</template>
+<template name="frasestemplate">
+  <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Usuario</h3>
+      </div>
+      <div class="panel-body">
+        {{text}}
+      </div>
+    </div>
+  </div>
+</template>
+<template name="form">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">La mejor frase navideña gana</h3>
+    </div>
+    <div class="panel-body">
+      <form action="" method="POST" role="form">
+      <legend>Publicar Frase</legend>
+      <div class="form-group">
+        <label for="">Escribir</label>
+        <input type="text" class="form-control" name="text" id="" placeholder="Here">
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+    </div>
+  </div>
 </template>
