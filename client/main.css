@@ -78,24 +78,3 @@ footer.page-footer {
 /*.card-image{
   width: 400px; height: 400px;
 }*/
-
-.chatform{
-  color:#000;
-}
-#client{
-  background-color:#fff;
-  color:#000;
-}
-.card-panel{
-  margin-top:0px;
-  margin-bottom:0px;
-}
-#users_list{
-  cursor: pointer;
-}
-.rectangle_hidden{
-  height: 400px;
-  width: 800px;
-  overflow:scroll;
-  overflow-x:hidden;
-}
