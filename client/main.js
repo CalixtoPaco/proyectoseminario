@@ -20,3 +20,10 @@ Template.info.events({
 	}
 
 });
+
+
+
+
+
+
+
