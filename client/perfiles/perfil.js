@@ -28,20 +28,27 @@ Template.perfil.events({
     e.preventDefault();
     
 		var datos = {
-			"username" : e.target.username.value, //preguntar al inge si esto e correcto o esta mal
+			"username" : e.target.username.value //preguntar al inge si esto e correcto o esta mal
 			
-			"email" : e.target.email.value,
-			"password" : e.target.password.value,
-			"profile" : {
-			"carrera" : e.target.carrera.value,
-			"nombre" : e.target.nombre.value
-			            }
+				
+			/*"profile" : {
+			
+			            }*/};
+	   var correo={
+               "email" : e.target.email.value
+	   };
+	   var carrer={
+               "carrera" : e.target.carrera.value
+	   };
+	   var name={
+               "nombre" : e.target.nombre.value
+	   };
                
-			};
+			
    
 		
-    console.log(datos);
-    Meteor.users.update(Meteor.userId(),{$set: {user: datos}});
+    console.log(datos,correo);
+   Meteor.users.update({_id: Meteor.user()._id}, {users: {username: datos, email: correo}});
     
   }
 });			
