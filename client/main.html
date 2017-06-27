@@ -46,7 +46,7 @@
     </div>
   </nav>
 
-
+ 
   <div class="row">
 
                  {{>logueomenu}} 
@@ -54,6 +54,12 @@
     {{>Template.dynamic template=banner}}
 
    {{>Template.dynamic template=content}}
+
+    {{>Template.dynamic template=registrar}}
+
+    {{#each crear}}
+      {{> contenido}}
+    {{/each}}
 
   <footer class="page-footer teal">
     <div class="container">
@@ -85,8 +91,5 @@
       </div>
     </div>
   </footer>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.main.js"></script>
-<script type="text/javascript" src="main.js"></script>
 
 </template>
