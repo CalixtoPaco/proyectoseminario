@@ -22,7 +22,7 @@ Template.registrarformul.events({
 			};
 			Accounts.createUser(user,function(e){
              if(e == undefined) {
-			$(".panelForm").css("opacity",0);				
+			$(".formalogin").css("opacity",0);				
 			Meteor.loginWithPassword(user.username,user.password);	
 				}
 			});

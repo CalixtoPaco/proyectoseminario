@@ -16,12 +16,15 @@
 
         <li><a href="#"><i class="material-icons left">home</i>Home</a></li>
         <li><a href="#"><i class="material-icons left">search</i>Buscar</a></li>
-        <li><a href="#"><i class="material-icons left">perm_phone_msg</i>Contactanos</a></li>        
+        <li><a href="soporte"><i class="material-icons left">perm_phone_msg</i>Contactanos</a></li>        
          <li><a href="#"><i class="material-icons left">grade</i>Acerca de</a></li>
 
 
          {{#if currentUser}}
-          <li><a href="#" id="logout"><i class="material-icons left">perm_identity</i>Usuario {{username}}</a></li>  
+          <li><a href="#" id="logout"><i class="material-icons left">perm_identity</i>Desconectar {{username}}</a></li> 
+
+           <li><a href="perfil.html" ><i class="material-icons left">perm_identity</i>Perfil</a></li> 
+
 
          {{else}}
 
@@ -35,7 +38,7 @@
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#"><i class="material-icons left">home</i>Home</a></li>
         <li><a href="#"><i class="material-icons left">search</i>Buscar</a></li>
-        <li><a href="#"><i class="material-icons left">perm_phone_msg</i>Contactanos</a></li>        
+        <li><a href="/soporte"><i class="material-icons left">perm_phone_msg</i>Contactanos</a></li>        
          <li><a href="#"><i class="material-icons left">grade</i>Acerca de</a></li>
          <li><a href="#"><i class="material-icons left">perm_identity</i>Ingresa</a></li>
       </ul>
@@ -43,37 +46,20 @@
     </div>
   </nav>
 
-
+ 
   <div class="row">
 
                  {{>logueomenu}} 
   </div>
+    {{>Template.dynamic template=banner}}
 
-  <div id="index-banner " class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <strong>
-        <h1 class="header center teal-text text-lighten-2">PLATAFORMA VIRTUAL EDUCATIVA</h1>
-        </strong>
-        <div class="row center">
-          <h5 class="header col s12 light">SEMINARIO DE SISTEMAS</h5>
-        </div>
-        <div class="row center">
-          
-        </div>
-        <br><br>
+   {{>Template.dynamic template=content}}
 
-      </div>
-    </div>
-    <div class="parallax"><img src="/noche.jpg" alt="Unsplashed background img 1"></div>
-  </div>
+    {{>Template.dynamic template=registrar}}
 
-
-
-  {{>Template.dynamic template=content}}
-
-
+    {{#each crear}}
+      {{> contenido}}
+    {{/each}}
 
   <footer class="page-footer teal">
     <div class="container">
@@ -105,8 +91,5 @@
       </div>
     </div>
   </footer>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.main.js"></script>
-<script type="text/javascript" src="main.js"></script>
 
 </template>
