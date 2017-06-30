@@ -16,3 +16,21 @@ Template.formcurso.events({
 
   }
 });
+/*var manager = new SubsManager();
+Template.formUpload.onCreate(function(){
+  self = this;
+  self.readyFiles = new ReactiveVar(false);
+  self.autorun(function(){
+    var handler = manager.subscribe("getFiles");
+    self.readyFiles.set(handler.ready());
+  });
+});
+Template.formUpload.events({
+  "change fileImages": function(e,template){
+    console.log("ok");
+    //template.readyFiles
+  }
+});*/
+/*Template.formUpload.onRendered(function(){
+  $(".modal").modal();
+});*/
