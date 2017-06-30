@@ -1,14 +1,14 @@
 Template.perfil.onRendered(function(){
 	$("select").material_select();
 });
-Meteor.subscribe('userData');
+/*Meteor.subscribe('datos');*/
 Template.perfil.helpers({
 
 	username : function(){
 		return Accounts.user().username;
 	},
 	email : function(){
-		return Accounts.user().emails[0].address
+		return Accounts.user().emails[0].address;
 	},
 
 	password : function(){
@@ -20,8 +20,12 @@ Template.perfil.helpers({
 	
 	profileCarrera : function(){
 		return Accounts.user().profile.carrera;
-	}
+	},
+	  owndatos: function() {
+    return this.userId === Meteor.userId();
+  }
 });
+
 
 Template.perfil.events({
   'submit form': function(e) {
@@ -48,7 +52,8 @@ Template.perfil.events({
    
 		
     console.log(datos,correo);
-   Meteor.users.update({_id: Meteor.user()._id}, {users: {username: datos, email: correo}});
+  
+   Meteor.users.update( { _id: Meteor.userId() }, { $set: { 'profile.nombre': name.nombre, 'profile.carrera': carrer.carrera,'username': datos.username, 'emails[address].address': correo.email}} );
     
   }
 });			
