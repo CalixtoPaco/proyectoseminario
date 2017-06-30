@@ -53,7 +53,7 @@ Template.perfil.events({
 		
     console.log(datos,correo);
   
-   Meteor.users.update( { _id: Meteor.userId() }, { $set: { 'profile.nombre': name.nombre, 'profile.carrera': carrer.carrera,'username': datos.username, 'emails[address].address': correo.email}} );
+   Meteor.users.update( { _id: Meteor.userId() }, { $set: { 'profile.nombre': name.nombre, 'profile.carrera': carrer.carrera,'username': datos.username, 'emails':[{address: correo.email}]}} );
     
   }
 });			
