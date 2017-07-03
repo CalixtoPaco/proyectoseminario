@@ -13,6 +13,12 @@
               <label class="control-label" for="">Nombres y Apellidos</label>
               <span class="help-block"></span>
               <input type="text" class="form-control" name="nombre" id="" placeholder="Nombres y Apelllidos">
+                            {{#if msn}}
+                   <span>
+                  
+                     {{msn}}
+                   </span>
+              {{/if}}
             </div>
           </div>
             </div>
@@ -22,6 +28,13 @@
               <label class="control-label" for="">Nick</label>
               <span class="help-block"></span>
               <input type="text" class="form-control" name="username" id="" placeholder="username">
+              {{#if msn}}
+                   <span>
+                  
+                     {{msn}}
+                   </span>
+              {{/if}}
+
             </div>
           </div>
           </div>
@@ -34,7 +47,7 @@
             <div class="form-group">
               <label class="control-label" for="">Correo Electronico</label>
               <span class="help-block"></span>
-              <input type="text" name="email" class="form-control" id="" placeholder="Email">
+              <input type="email" name="email" class="form-control" id="" placeholder="Email">
             </div>
           </div>
             </div>
