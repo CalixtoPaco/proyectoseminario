@@ -14,14 +14,14 @@ Meteor.startup(() => {
   });
 
   Meteor.methods({
-    "insert":function(datos) {
-      users.insert(datos);
+    "insert2":function(dato) {
+      users.insert(dato);
       return true;
      }
   });
   Meteor.methods({
-    "update":function(datos) {
-      users.update(datos);
+    "update":function(dato) {
+      users.update(dato);
       return true;
      }
   });
@@ -32,7 +32,7 @@ Meteor.startup(() => {
 Meteor.users.allow({
   update() { return true; }
 });
-Meteor.publish("datos", function(){
+Meteor.publish("dato", function(){
 	return users.find();
 
 });
