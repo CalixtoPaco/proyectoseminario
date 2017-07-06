@@ -11,10 +11,10 @@
     <nav class="white teal lighten-2" role="navigation ">
     <div class="nav-wrapper container">
 
-      <a id="logo-container" href=""  class="brand-logo"><img src="/logo.png" alt="" height="68" width="88"></a>
+      <a id="logo-container" href="/"  class="brand-logo"><img src="/logo.png" alt="" height="68" width="88"></a>
       <ul class="right hide-on-med-and-down">
 
-        <li><a href="#"><i class="material-icons left">home</i>Home</a></li>
+        <li><a href="/"><i class="material-icons left">home</i>Home</a></li>
         <li><a href="#"><i class="material-icons left">search</i>Buscar</a></li>
         <li><a href="#"><i class="material-icons left">perm_phone_msg</i>Contactanos</a></li>        
          <li><a href="#"><i class="material-icons left">grade</i>Acerca de</a></li>
@@ -35,6 +35,7 @@
 
       </ul>
 
+
       <ul id="nav-mobile" class="side-nav">
         <li><a href="#"><i class="material-icons left">home</i>Home</a></li>
         <li><a href="#"><i class="material-icons left">search</i>Buscar</a></li>
@@ -52,37 +53,30 @@
                  {{>logueomenu}} 
   </div>
 
-  <div id="index-banner " class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <strong>
-        <h1 class="header center teal-text text-lighten-2">PLATAFORMA VIRTUAL EDUCATIVA</h1>
-        </strong>
-        <div class="row center">
-          <h5 class="header col s12 light">SEMINARIO DE SISTEMAS</h5>
-        </div>
-        <div class="row center">
-          
-        </div>
-        <br><br>
-
-      </div>
-    </div>
-    <div class="parallax"><img src="/noche.jpg" alt="Unsplashed background img 1"></div>
-  </div>
-
-
-
-  {{>Template.dynamic template=content}}
-
+  
+    
+    {{>Template.dynamic template=content}}
+    {{>Template.dynamic template=baner}}
 
 
     {{>Template.dynamic template=registrar}}
 
+    {{#if currentUser}}
     {{#each crear}}
       {{> contenido}}
     {{/each}}
+    {{else}}
+    
+      <div class="row">
+        <div class="col s12 m5">
+          <div class="card-panel red">
+            <span class="white-text">Para utilizar el sistema primero debe registrarse     ERROR ACCESO DENEGADO...!!!
+            </span>
+          </div>
+        </div>
+      </div>
+    
+    {{/if}}
 
   <footer class="page-footer teal">
     <div class="container">
@@ -114,5 +108,4 @@
       </div>
     </div>
   </footer>
-
 </template>
