@@ -25,6 +25,16 @@ Meteor.startup(() => {
       return true;
      }
   });
+    Meteor.methods({ 
+    "insert3": function(data) { 
+       Material.insert(data);
+       return true;
+    } 
+  });
+  Meteor.publish('data', function(){
+    return Material.find();
+  });
+
 });
 
 // code to run on server at startup
