@@ -1,6 +1,3 @@
-<template name="banner_nav">
-	
-</template>
 
 <template name="banner">
 	  <div id="index-banner " class="parallax-container">
@@ -14,7 +11,15 @@
           <h5 class="header col s12 light">SEMINARIO DE SISTEMAS</h5>
         </div>
         <div class="row center">
-          
+          {{#if isInRole 'admin'}}
+              <a href="/admin" id="download-button" class="btn-large waves-effect waves-light light-blue lighten-2 lighten-1">administrar</a>
+          {{else}}
+            {{#if isInRole 'profesor'}}
+                  <a href="/crearcurso" id="download-button" class="btn-large waves-effect waves-light light-blue lighten-2 lighten-1">ir a crear</a>
+            {{else}}
+        
+            {{/if}}
+          {{/if}}
         </div>
         <br><br>
 
@@ -22,6 +27,4 @@
     </div>
     <div class="parallax"><img src="noche.jpg" alt="Unsplashed background img 1"></div>
   </div>
-
-
 </template>

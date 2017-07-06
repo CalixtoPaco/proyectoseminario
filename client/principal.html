@@ -1,8 +1,10 @@
 <template name="contenido">
+
+{{#if isInRole 'profesor'}}
 <div class="container">
   <div class="col s12 m7 ">
     <h2 class="header">{{titulo}}</h2>
-    <div class="card medium horizontal">
+    <div class="card  horizontal">
       <div class="card-image">
         <img src="disenio.jpg">
       </div>
@@ -11,14 +13,13 @@
 
           {{descripcion}}
 
-          <p>En este curso aprenderas todo sobre el diseño y desarrollo de la web</p>
-
         </div>
-        <div class="card-stacked">
-          <h5>fecha de inicio:</h5>{{fecha}}
+        <div class="modal-footer">
+          <h5>fecha de inicio:</h5> {{fecha}}
         </div>
         <div class="card-action">
           <a href="/cursos">click aqui para ver el curso</a>
+          <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip">editar</a>
         </div>
       </div>
     </div>
@@ -35,5 +36,42 @@
     </div>
     <div class="parallax"><img src="/noche.jpg" alt="Unsplashed background img 2"></div>
   </div>
+  {{else}}
+  
+<div class="container">
+  <div class="col s12 m7">
+    <h2 class="header">{{titulo}}</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img src="disenio.jpg">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          {{descripcion}}
+        </div>
+        <div class="modal-footer">
+          <h5>fecha de inicio:</h5> {{fecha}}
+        </div>
+        <div class="card-action">
+          <a href="/cursos">click aqui para ver el curso</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">utilizando un responsivo moderno</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="/noche.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+{{/if}}
+
 </template>
+
 

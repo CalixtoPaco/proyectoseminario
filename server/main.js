@@ -7,6 +7,10 @@ Meteor.startup(() => {
     "insert": function(datos) { 
        Curso.insert(datos);
        return true;
+    },
+    "update": function(rol){
+      Roles.addUsersToRoles(rol, ['profesor']);
+      return true;
     } 
   });
   Meteor.publish('datos', function(){
@@ -20,21 +24,24 @@ Meteor.startup(() => {
      }
   });
   Meteor.methods({
-    "update":function(dato) {
+    "updates":function(dato) {
       users.update(dato);
       return true;
      }
   });
-});
+  Meteor.users.allow({
+    update() { return true; }
+  });
+  Meteor.publish("dato", function(){
+    return users.find();
+  });
+  Meteor.publish("allUsers", function(){
+    return Meteor.users.find({});
+  });
 
-// code to run on server at startup
-
-Meteor.users.allow({
-  update() { return true; }
-});
-Meteor.publish("dato", function(){
-	return users.find();
-
+  Meteor.publish('mostrar', function(){
+    return Meteor.users.find();
+  });
 });
 
 

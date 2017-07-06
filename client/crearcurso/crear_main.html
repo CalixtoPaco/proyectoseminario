@@ -1,9 +1,13 @@
 <template name="crear">
-
+	{{#if isInRole 'profesor'}}
       <!-- Modal Trigger -->
       <!--{{> banner}}-->
-  <a class="waves-effect waves-light btn modal-trigger" href="#modal1">crear curso</a>
-  
+  <center>
+  <a class="waves-effect waves-light btn modal-trigger  light-blue lighten-2" href="#modal1">crear curso</a>
+  </center>
+  {{else}}
+        NO ERES PROFESOR
+  {{/if}}
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
@@ -13,3 +17,4 @@
   </div>
   
 </template>
+ 
