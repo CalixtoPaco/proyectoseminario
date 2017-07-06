@@ -9,6 +9,10 @@ Meteor.startup(() => {
        return true;
     } 
   });
+  Meteor.publish("getFiles", function(){
+    return FILES.find().cursor;
+  });
+  
   Meteor.publish('datos', function(){
     return Curso.find();
   });
