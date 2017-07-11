@@ -9,9 +9,6 @@ Meteor.startup(() => {
        return true;
     } 
   });
-  Meteor.publish("getFiles", function(){
-    return FILES.find().cursor;
-  });
   
   Meteor.publish('datos', function(){
     return Curso.find();
@@ -23,12 +20,12 @@ Meteor.startup(() => {
       return true;
      }
   });
-  Meteor.methods({
+  /*Meteor.methods({
     "update":function(dato) {
       users.update(dato);
       return true;
      }
-  });
+  });*/
     Meteor.methods({ 
     "insert3": function(data) { 
        Material.insert(data);
