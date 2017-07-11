@@ -12,7 +12,9 @@ Meteor.startup(() => {
       Roles.addUsersToRoles(rol, ['profesor']);
       return true;
     } 
+
   });
+  
   Meteor.publish('datos', function(){
     return Curso.find();
   });
@@ -23,12 +25,24 @@ Meteor.startup(() => {
       return true;
      }
   });
-  Meteor.methods({
+
+  /*Meteor.methods({
+    "updates":function(dato) {*/
+
+ Meteor.methods({
     "updates":function(dato) {
+
       users.update(dato);
       return true;
      }
   });
+    Meteor.methods({ 
+    "insert3": function(data) { 
+       Material.insert(data);
+       return true;
+    } 
+  });
+
   Meteor.users.allow({
     update() { return true; }
   });
@@ -39,10 +53,35 @@ Meteor.startup(() => {
     return Meteor.users.find({});
   });
 
+  Meteor.publish('data', function(){
+    return Material.find();
+  });
+
+
+
+Meteor.users.allow({
+  update() { return true; }
+});
+
+
+Meteor.publish("dato", function(){
+  return users.find();
+
+
+
+  });
   Meteor.publish('mostrar', function(){
     return Meteor.users.find();
-  });
 });
+
+
+
+
+});
+
+// code to run on server at startup
+
+
 
 
 

@@ -35,7 +35,10 @@ Template.info.helpers({
   	},
 	crear : function(){
 		return Curso.find();
-	}
+	},
+    cursodisenio : function(){
+        return Material.find();
+    }
 });
 
 Template.info.events({

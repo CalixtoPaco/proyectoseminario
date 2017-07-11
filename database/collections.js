@@ -15,3 +15,13 @@ var CursoSchema = new SimpleSchema({
 });
 Curso.attachSchema(CursoSchema);
 
+Material = new Mongo.Collection("material");
+var MaterialSchema = new SimpleSchema({
+     title: {
+     	type:String 
+     },
+      description: {
+        type: String
+    },
+});
+Material.attachSchema(MaterialSchema);
