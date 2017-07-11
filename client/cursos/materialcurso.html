@@ -1,0 +1,71 @@
+<template name="materialcurso">
+	<div class="row">
+		<div class="col s12 m6">
+
+                 <div class="row">
+                   
+
+                    <h2 class="header">{{title}}</h2>
+                   <div class="card horizontal">
+                        <div class="card-image">
+
+                          <img src="anonimo.png" height="150" width="150">
+                       
+                          
+                     </div>
+                  <div class="card-stacked">
+                     <div class="card-content">
+                       {{description}}                          
+                    </div>
+              <div class="row">
+              <div class="col s12">
+                 <div class="card-action">
+
+              <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown1'>Chat</a>
+        
+  <!-- Dropdown Structure -->
+  <ul id='dropdown1' class='dropdown-content'>
+    <li><a href="#!">Preguntas y respuestas</a></li>
+    <li><a href="#!">Discusiones  </a></li>
+   
+  </ul>
+<script>
+$('.dropdown-button').dropdown('open');
+
+$('.dropdown-button').dropdown('close');
+        
+  $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrainWidth: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left', // Displays dropdown with edge aligned to the left of button
+      stopPropagation: false // Stops event propagation
+    }
+  );
+</script>
+
+
+
+
+
+                            </div>
+              </div>
+                
+              </div>
+                 
+
+                          </div>
+                         </div>
+             
+
+                      
+
+                  </div> 
+
+		</div>
+	</div>
+
+</template>
