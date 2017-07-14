@@ -3,14 +3,12 @@ Template.cursodisenio.events({
     var data = {
       title: e.target.title.value,
       description: e.target.description.value,
-      
+      video: e.target.imagen.placeholder
     };
     
     Meteor.call("insert3",data, function(err,result){
     });
-console.log(data);
-
-
+	console.log(data);
   }
 });
 

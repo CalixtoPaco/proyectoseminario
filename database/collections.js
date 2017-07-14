@@ -35,5 +35,8 @@ var MaterialSchema = new SimpleSchema({
       description: {
         type: String
     },
+    video:{
+        type: String
+    }
 });
 Material.attachSchema(MaterialSchema);

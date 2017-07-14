@@ -1,40 +1,57 @@
 <template name="material">
-  
-                <form action="" >
-                              <legend>LLene el los datos requeridos para Material</legend>
-                                <div class="input-field"> 
-                                  <div class="form-group">
-                                      <label class="control-label" for="first_name">Titulo:</label>
-                                      <span class="help-block"></span>
-                                      <input name="title" type="text" id="first_name" class="validate">
-                                  </div>
-                                 </div>
-                                  <div class="input-field"> 
-                                 <div class="form-group">
-                                      <label class="control-label" for="last_name">Descripcion:</label>
-                                      <span class="help-block"></span>
-                                      <input name="description" type="text" id="last_name" class="validate">
-                                  </div>
-                                  </div>
-
-                              <div class="file-field input-field">
-                                <div class="btn">
-                                    <span>Seleccione el archivo</span>
-                                    {{#if fileSend}}
-                                    <b> La imagen se esta enviando</b>
-                                    {{else}}
-                                    <input name="" id="file-images" type="file">
-                                    {{/if}}
-                                </div>
-                             <div class="file-path-wrapper">
-                            <input class="file-path validate" type="text">
-                             </div>
-                              </div>
-
- 
-                                 <div class="modal-footer">
-                                 <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
-                                 </div>
-                 </form>
+  <form action="" >
+    <legend>LLene el los datos requeridos para Material</legend>
+      <div class="input-field"> 
+        <div class="form-group">
+            <label class="control-label" for="first_name">Titulo:</label>
+            <span class="help-block"></span>
+            <input name="title" type="text" id="first_name" class="validate">
+        </div>
+      </div>
+      <div class="input-field"> 
+        <div class="form-group">
+              <label class="control-label" for="last_name">Descripcion:</label>
+              <span class="help-block"></span>
+              <input name="description" type="text" id="last_name" class="validate">
+        </div>
+      </div>
+      <div class="row">
+        {{#with cargarimg}}
+        <span id="progress">{{progress.get}}%</span>
+      {{else}}
+        <div class="file-field input-field">
+            <div class="btn">
+              <span>video del curso</span>
+              <input type="file" id="imginput">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="place" type="text" name="imagen" placeholder="{{imgDelCurso.link}}">
+            </div>
+          </div>
+          <video src="{{imgDelCurso.link}}" controls="controls"></video>
+      
+      {{/with}}
+      </div>
+      <div class="row">
+        {{#with cargarimg}}
+        <span id="progress">{{progress.get}}%</span>
+      {{else}}
+        <div class="file-field input-field">
+            <div class="btn">
+              <span>Archivo del curso</span>
+              <input type="file" id="imginput">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="place" type="text" name="img" placeholder="{{imgDelCurso.link}}">
+            </div>
+          </div>
+      <img src="{{imgDelCurso.link}}" alt="" width="200">
+      {{/with}}
+       </div>
+        
+      <div class="modal-footer">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
+      </div>
+   </form>
   
 </template>
