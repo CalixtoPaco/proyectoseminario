@@ -66,14 +66,14 @@ Meteor.startup(() => {
   Meteor.publish('data', function(){
     return Material.find();
   });
-  /*Meteor.users.allow({
+  Meteor.users.allow({
     update() { return true; }
   });
 
 
   Meteor.publish("dato", function(){
     return users.find();
-  });*/
+  });
   
 });
 
