@@ -3,6 +3,9 @@ import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
   // code to run on server at startup
+  Meteor.publish('cursoimg', function(){
+    return imgCurso.find().cursor;
+  });
   Meteor.methods({ 
     "insert": function(datos) { 
        Curso.insert(datos);
@@ -10,6 +13,10 @@ Meteor.startup(() => {
     },
     "update": function(rol){
       Roles.addUsersToRoles(rol, ['profesor']);
+      return true;
+    },
+    "eliminar": function(rol){
+      Roles.removeUsersFromRoles(rol, ['profesor']);
       return true;
     } 
 
@@ -52,31 +59,22 @@ Meteor.startup(() => {
   Meteor.publish("allUsers", function(){
     return Meteor.users.find({});
   });
+  Meteor.publish('mostrar', function(){
+    return Meteor.users.find();
+  });
 
   Meteor.publish('data', function(){
     return Material.find();
   });
-
-
-
-Meteor.users.allow({
-  update() { return true; }
-});
-
-
-Meteor.publish("dato", function(){
-  return users.find();
-
-
-
+  /*Meteor.users.allow({
+    update() { return true; }
   });
-  Meteor.publish('mostrar', function(){
-    return Meteor.users.find();
-});
 
 
-
-
+  Meteor.publish("dato", function(){
+    return users.find();
+  });*/
+  
 });
 
 // code to run on server at startup
