@@ -1,50 +1,44 @@
 <template name="materialcurso">
 	<div class="row">
-		<div class="col s12 ">
 
-                 <div class="row">
-                   
+		 <div class="col s12 ">
 
-                    <h2 class="header">{{title}}</h2>
+
+		   <div class="col s12 m6">
+         {{#each mate}}
+             <div class="row">
+                                   
+                 <h2 class="header">{{title}}</h2>
                    <div class="card horizontal">
-                        <div class="card-image">
+                                  <div class="card-image">
 
-                          <img src="anonimo.png" height="150" width="150">
-                       
-                          
-                     </div>
-                  <div class="card-stacked">
-                     <div class="card-content">
-                      <p>hola {{description}}</p>                          
-                    </div>
-              <div class="row">
+                                    <img src="anonimo.png" height="150" width="150">
+                                 
+                                    
+                                  </div>
+                       <div class="card-stacked">
+                                   <div class="card-content">
+                                    <p>{{description}}</p>                          
+                                  </div>
+                           <div class="row">
 
-              <div class="col s12">
-                 <div class="card-action">
+                              <div class="col s12">
+                                  <div class="card-action">
 
-                <li><a href="/cursos/form">ver video</a></li>
-        
-
-
-
-
-
-
-                            </div>
-              </div>
+                                     <li><a href="/cursos/form">ver video</a></li>
+                                  </div>
+                              </div>
                 
-              </div>
+                            </div>
                  
 
-                          </div>
-                         </div>
-             
+                       </div>
+                    </div>
+             </div> 
+                  {{/each}}
 
-                      
-
-                  </div> 
-
-		</div>
-	</div>
+		     </div>
+	   </div>
+  </div>
 
 </template>

@@ -22,7 +22,7 @@ imgCurso = new FilesCollection({
     collectionName: 'imgCurso',
     allowClientCode: false,
     storagePath: '/home/karen/Documentos/files_proyect',
-    //downloadRoute: '/home/paco/Documentos/files_proyect/download',
+
     permissions: 0755,
     cacheControl: 'public, max-age=3153600'
 });

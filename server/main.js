@@ -52,7 +52,7 @@ Meteor.startup(() => {
       CHAT.insert(chatdatos);
        return true; }
   });
-
+//Material.remove({});
   Meteor.users.allow({
     update() { return true; }
   });

@@ -1,0 +1,13 @@
+<template name="vercurso">
+
+	<div class="row">
+  {{>Template.dynamic template=contentmat}}
+
+
+ {{>Template.dynamic template=registro}}
+
+    {{#each cursodisenio}}
+      {{> materialcurso}}
+    {{/each}}
+</div>
+</template>
