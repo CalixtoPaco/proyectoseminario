@@ -49,7 +49,7 @@ Meteor.startup(() => {
        return true;
     } 
   });
-
+//Material.remove({});
   Meteor.users.allow({
     update() { return true; }
   });
