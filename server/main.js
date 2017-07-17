@@ -47,7 +47,10 @@ Meteor.startup(() => {
     "insert3": function(data) { 
        Material.insert(data);
        return true;
-    } 
+    },
+    "insertchat": function(chatdatos){
+      CHAT.insert(chatdatos);
+       return true; }
   });
 
   Meteor.users.allow({
@@ -75,6 +78,41 @@ Meteor.startup(() => {
     return users.find();
   });
   
+
+
+
+
+
+  //------------------------parte del chat
+  Meteor.publishComposite("getConection",function(idUs,idMe){
+    return {
+       find(){
+         return CHAT.find(
+           {$or:
+             [
+               {idSource:idMe,idDestination:idUs},
+               {idSource:idUs,idDestination:idMe}
+              ]});
+       },
+       children:[
+         {
+           find(chat){
+             return Meteor.users.find({_id:chat.idSource});
+           }
+           
+        },
+         {
+           find(chat){
+            return Meteor.users.find({_id:chat.idDestination});
+             
+           }
+         }
+       ]
+    }
+   });
+   Meteor.publish('chatsms', function() {
+     return CHAT.find();
+   });
 });
 
 // code to run on server at startup

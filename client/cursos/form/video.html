@@ -1,6 +1,17 @@
 <template name="video">
-	{{#each cargarvideo}}
-		
-	<video src="{{video}}" controls="controls"></video>
-	{{/each}}
+
+         <div class="row">
+						<div class="col s7">
+								{{#each cargarvideo}}
+								
+							<video id="Video1" src="{{video}}" controls="controls"></video>
+							{{/each}}
+						</div>
+		       <div class="col s5">
+			  {{>chat}} 
+		       </div>
+	
+         </div>
+
+
 </template>
