@@ -15,8 +15,33 @@
               <input name="description" type="text" id="last_name" class="validate">
         </div>
       </div>
+      {{>planvideo}}
       <div class="row">
         {{#with cargarimg}}
+        <span id="progress">{{progress.get}}%</span>
+      {{else}}
+        <div class="file-field input-field">
+            <div class="btn">
+              <span>Archivo del curso</span>
+              <input type="file" id="imginput">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="place" type="text" name="files" placeholder="{{imgDelCurso.link}}">
+            </div>
+          </div>
+        {{imgDelCurso.name}}
+      {{/with}}
+       </div>
+          
+      <div class="modal-footer">
+      <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
+      </div>
+   </form>
+  
+</template>
+<template name="planvideo">
+  <div class="row">
+        {{#with cargarvid}}
         <span id="progress">{{progress.get}}%</span>
       {{else}}
         <div class="file-field input-field">
@@ -29,29 +54,6 @@
             </div>
           </div>
           <video src="{{imgDelCurso.link}}" controls="controls"></video>
-      
       {{/with}}
       </div>
-      <div class="row">
-        {{#with cargarimg}}
-        <span id="progress">{{progress.get}}%</span>
-      {{else}}
-        <div class="file-field input-field">
-            <div class="btn">
-              <span>Archivo del curso</span>
-              <input type="file" id="imginput">
-            </div>
-            <div class="file-path-wrapper">
-              <input class="place" type="text" name="img" placeholder="{{imgDelCurso.link}}">
-            </div>
-          </div>
-      <img src="{{imgDelCurso.link}}" alt="" width="200">
-      {{/with}}
-       </div>
-        
-      <div class="modal-footer">
-      <button class="btn waves-effect waves-light" type="submit" name="action">Enviar</button>
-      </div>
-   </form>
-  
 </template>

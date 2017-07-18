@@ -23,6 +23,7 @@ imgCurso = new FilesCollection({
     allowClientCode: false,
     storagePath: '/home/paco/Documentos/files_proyect',
     downloadRoute: '/home/paco/Documentos/files_proyect/download',
+
     permissions: 0755,
     cacheControl: 'public, max-age=3153600'
 });
@@ -37,6 +38,29 @@ var MaterialSchema = new SimpleSchema({
     },
     video:{
         type: String
+    },
+    archivo:{
+        type: String
+    },
+    idcurso: {
+        type: String
     }
 });
 Material.attachSchema(MaterialSchema);
+
+CHAT = new  Mongo.Collection("chat");
+var chatSchema = new SimpleSchema({
+  idSource: {
+      type:String
+  },
+  idDestination: {
+      type:String
+  },
+  date: {
+      type:Date
+  },
+  message: {
+      type:String
+  }
+});
+CHAT.attachSchema(chatSchema)
