@@ -41,19 +41,20 @@ var MaterialSchema = new SimpleSchema({
 });
 Material.attachSchema(MaterialSchema);
 
-CHAT = new  Mongo.Collection("chat");
-var chatSchema = new SimpleSchema({
-  idSource: {
-      type:String
+
+Pregunta = new Mongo.Collection("pregunta");
+var PreguntaSchema = new SimpleSchema({
+  text: {
+    type: String
   },
-  idDestination: {
-      type:String
-  },
-  date: {
-      type:Date
-  },
-  message: {
-      type:String
-  }
+  date2: {
+    type: Date
+  }/*,
+  idUs: {
+    type: String,
+    autoValue: function(){
+        return Accounts.user()._id;
+    } 
+  }*/
 });
-CHAT.attachSchema(chatSchema)
+Pregunta.attachSchema(PreguntaSchema);

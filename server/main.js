@@ -18,9 +18,22 @@ Meteor.startup(() => {
     "eliminar": function(rol){
       Roles.removeUsersFromRoles(rol, ['profesor']);
       return true;
-    } 
+    },
+    //parte de pregunta a la base de datos
+        "insertpregunta":function(datospre) {
+         
+     Pregunta.insert(datospre);
+      return true;
+     } 
 
   });
+
+//Pregunta.remove({});
+//parte de discusiones
+  Meteor.publish("datospre", function(){
+  return Pregunta.find();
+});
+
   
   Meteor.publish('datos', function(){
     return Curso.find();
