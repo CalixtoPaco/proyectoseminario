@@ -77,7 +77,8 @@ Respuesta.remove({});
     },
     "insertchat": function(chatdatos){
       CHAT.insert(chatdatos);
-       return true; }
+       return true; 
+     }
   });
 //Material.remove({});
   Meteor.users.allow({
@@ -106,9 +107,44 @@ Respuesta.remove({});
   });
   
 
+
+
+
+
+
+  //------------------------parte del chat
+  Meteor.publishComposite("getMSN",function(idUs,idMe){
+    return {
+       find(){
+         return CHAT.find(
+           {$or:
+             [
+               {idSource:idMe,idDestination:idUs},
+               {idSource:idUs,idDestination:idMe}
+              ]});
+       },
+       children:[
+         {
+           find(chat){
+             return Meteor.users.find({_id:chat.idSource});
+           }
+           
+        },
+         {
+           find(chat){
+            return Meteor.users.find({_id:chat.idDestination});
+             
+           }
+         }
+       ]
+    }
+   });
+   Meteor.publish('michatsms', function() {
+     return CHAT.find();
+   });
+
 });
 
-// code to run on server at startup
 
 
 

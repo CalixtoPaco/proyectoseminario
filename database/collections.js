@@ -80,3 +80,19 @@ Respuesta = new Mongo.Collection("respuesta");
 
  });
 Respuesta.attachSchema(RespuestaSchema);
+CHAT = new  Mongo.Collection("chat");
+var chatSchema = new SimpleSchema({
+  idSource: {
+      type:String
+  },
+  idDestination: {
+      type:String
+  },
+  date: {
+      type:Date
+  },
+  message: {
+      type:String
+  }
+});
+CHAT.attachSchema(chatSchema)
