@@ -58,3 +58,15 @@ var PreguntaSchema = new SimpleSchema({
   }*/
 });
 Pregunta.attachSchema(PreguntaSchema);
+
+Respuesta = new Mongo.Collection("respuesta");
+ var RespuestaSchema = new SimpleSchema({
+   mensaje: {
+     type:String
+   },
+   date3: {
+     type:Date
+   }
+
+ });
+Respuesta.attachSchema(RespuestaSchema);

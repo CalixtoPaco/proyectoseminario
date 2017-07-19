@@ -24,21 +24,32 @@ Meteor.startup(() => {
          
      Pregunta.insert(datospre);
       return true;
+     } ,
+// parte de respuesta de discusiones--------------------
+     "insertres":function(datosres) {
+         
+     Respuesta.insert(datosres);
+      return true;
      } 
 
   });
 
 //Pregunta.remove({});
-//parte de discusiones
-  Meteor.publish("datospre", function(){
-  return Pregunta.find();
-});
+//parte de discusiones---------------------------------
+        Meteor.publish("datospre", function(){
+        return Pregunta.find();
+      });
 
-  
+//parte de respuesta -----------------------------------
+
+       Meteor.publish("datosres", function(){
+          return Respuesta.find();
+        });
+//---------------------------------------
   Meteor.publish('datos', function(){
     return Curso.find();
   });
-
+//Pregunta.remove({});
   Meteor.methods({
     "insert2":function(dato) {
       users.insert(dato);
