@@ -10,7 +10,7 @@
 Template.info.onRendered(function(){
 	$('.button-collapse').sideNav();
     $('.parallax').parallax();
-    $(".formalogin").css("opacity",0);
+     $('.modal').modal();
 });
 Template.crear.onRendered(function(){
     $('.button-collapse').sideNav();
@@ -42,9 +42,9 @@ Template.info.helpers({
 });
 
 Template.info.events({
-	"click #login" : function(){
+	/*"click #login" : function(){
 		$(".formalogin").css("opacity",1);
-	},
+	},*/
 
 	"click #logout" : function(){
 		Meteor.logout();

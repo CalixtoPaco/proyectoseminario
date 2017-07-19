@@ -18,14 +18,40 @@ Meteor.startup(() => {
     "eliminar": function(rol){
       Roles.removeUsersFromRoles(rol, ['profesor']);
       return true;
-    } 
+    },
+
+//parte de pregunta a la base de datos ------------------------
+        "insertpregunta":function(datospre) {
+         
+     Pregunta.insert(datospre);
+      return true;
+     } ,
+// parte de respuesta de discusiones--------------------
+     "insertres":function(datosres) {
+         
+     Respuesta.insert(datosres);
+      return true;
+     } 
 
   });
-  
+
+Respuesta.remove({});
+//parte de discusiones---------------------------------
+        Meteor.publish("datospre", function(){
+        return Pregunta.find();
+      });
+
+//parte de respuesta -----------------------------------
+
+       Meteor.publish("datosres", function(){
+          return Respuesta.find();
+        });
+//---------------------------------------
   Meteor.publish('datos', function(){
     return Curso.find();
   });
-
+//Pregunta.remove({});
+//Respuesta.remove({});
   Meteor.methods({
     "insert2":function(dato) {
       users.insert(dato);
@@ -80,40 +106,6 @@ Meteor.startup(() => {
   });
   
 
-
-
-
-
-  //------------------------parte del chat
-  Meteor.publishComposite("getConection",function(idUs,idMe){
-    return {
-       find(){
-         return CHAT.find(
-           {$or:
-             [
-               {idSource:idMe,idDestination:idUs},
-               {idSource:idUs,idDestination:idMe}
-              ]});
-       },
-       children:[
-         {
-           find(chat){
-             return Meteor.users.find({_id:chat.idSource});
-           }
-           
-        },
-         {
-           find(chat){
-            return Meteor.users.find({_id:chat.idDestination});
-             
-           }
-         }
-       ]
-    }
-   });
-   Meteor.publish('chatsms', function() {
-     return CHAT.find();
-   });
 });
 
 // code to run on server at startup
