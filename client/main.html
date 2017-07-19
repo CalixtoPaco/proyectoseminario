@@ -28,7 +28,7 @@
 
          {{else}}
 
-         <li><a href="#" id="login"><i class="material-icons left">perm_identity</i>Ingresa</a></li>  
+         <li><a href="#modal1" id="login"><i class="material-icons left">perm_identity</i>Ingresa</a></li>  
         
           {{/if}}
 
@@ -48,11 +48,19 @@
   </nav>
 
  
-  <div class="row">
+  <div id="modal1" class="modal">
+      <div class="modal-content">
+       <div class="row"> 
+            {{>logueomenu}}
+      </div>
+    </div>
+   <div class="modal-footer">
+    
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" position="right">Salir</a>
+   </div>
 
-                 {{>logueomenu}} 
+   
   </div>
-
   
     
     {{>Template.dynamic template=content}}
