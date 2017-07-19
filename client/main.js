@@ -52,3 +52,8 @@ Template.info.events({
 
 });
 
+Template.info.helpers({
+    fotoperfil : function(){
+        return Accounts.user().profile.foto
+    }
+});

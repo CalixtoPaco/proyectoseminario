@@ -44,6 +44,9 @@ var MaterialSchema = new SimpleSchema({
     },
     idcurso: {
         type: String
+    },
+    linkvideo: {
+        type: String
     }
 });
 Material.attachSchema(MaterialSchema);

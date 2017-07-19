@@ -45,9 +45,11 @@ Template.registrarformul.events({
 			"email" : e.target.email.value,
 			"password" : e.target.password.value,
 			"profile" : {
-			"carrera" : e.target.carrera.value,
-			"nombre" : e.target.nombre.value
-			            }
+				"carrera" : e.target.carrera.value,
+				"nombre" : e.target.nombre.value,
+			    "foto" : "hola"
+     
+			     }
                
 			};
 
