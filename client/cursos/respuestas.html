@@ -1,6 +1,6 @@
 <template name="respuesta">
 
-		    <div class="card-content">
+	<div class="card-content">
 	      <div class="row"> 
 		        <div class="col s6">
 		    
@@ -17,38 +17,40 @@
 					            
 			            </div>
 		        </div>
-	        </div>
+	       </div>
 	  
-	    </div>
+	</div>
 	      <div class="card-reveal">
-	      <span class="card-title activator">Respuestas<i class="material-icons right">close</i></span>
-	     
-        <form action="" method="POST" role="form">
-         <div class="form-group">
-        <input type="text" class="form-control" name="mensaje" id="" placeholder="Ey! Aqui ...">
-        </div>
-		 
-		     <button type="submit" class="btn btn-primary">Enviar</button>
+		      <span class="card-title activator">Respuestas<i class="material-icons right">close</i>
+		      </span>
+		     
+			        <form action="" method="POST" role="form">
+				         <div class="form-group">
+				        <input type="text" class="form-control" name="mensaje" id="" placeholder="Ey! Aqui ...">
+				        </div>
+					 
+					     <button type="submit" class="btn btn-primary">Enviar</button>
 
-		     <div class="row">
-		     	 {{>messages}}
-		     </div>
-		</form>
+					     <div class="row">
+					     	 {{>messages}}
+					     </div>
+					</form>
 
 
 	    </div>
 </template>
-<template name="messages">
- <div class="row">
-   {{#each message}}
-  <div class="col s7">
 
-	        <h7 class="panel-title">Usuario: </h7>
-	          <p>{{mensaje}}</p>
-	          {{date3}}
-          </div>
-          {{/each}}
- 	
- </div>
+<template name="messages">
+	 <div class="row">
+		   {{#each message}}
+		  <div class="col s7">
+
+		        <h7 class="panel-title">Usuario: </h7>
+		          <p>{{mensaje}}</p>
+		          {{date3}}
+		   </div>
+	   {{/each}}
+	 	
+	 </div>
 	
 </template>

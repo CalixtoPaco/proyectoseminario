@@ -44,6 +44,9 @@ Material.attachSchema(MaterialSchema);
 
 Pregunta = new Mongo.Collection("pregunta");
 var PreguntaSchema = new SimpleSchema({
+   id_user: {
+        type: String
+    },
   text: {
     type: String
   },
