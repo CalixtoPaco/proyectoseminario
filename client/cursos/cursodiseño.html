@@ -1,46 +1,26 @@
 
 <template name="cursodisenio">
-
-   <div class="row">
-         <div class="col s6"> 
-                      <div class="col s12">
-
-              <p>Ordenado por:   {{title}}</p>
-              <a class="waves-effect waves-light btn">Prioridad</a>
-              <a class="waves-effect waves-light btn">Nuevos</a>
-              <br>
-                      <br>
-                             <a class="waves-effect waves-light btn modal-trigger" href="#modal">Agregar Material  </a>
-  
-                              <!-- Modal Structure -->
-                                 <div id="modal" class="modal">
-                                     <div class="modal-content">
-                                         {{> material}}    
-                                             
-                                     </div>
-                                  </div>
-
-                                 
-                       </div>
-
- 
-                     
-
-          </div>    
-
-
-
-
-
-                       {{>Template.dynamic template=contentmat}}
-                         
-                        {{> materialcurso}}
+  <div class="row">
+    <div class="col s6"> 
+      <div class="col s12">
+          <p>Ordenado por: </p>
+          <a class="waves-effect waves-light btn">Prioridad</a>
+          <a class="waves-effect waves-light btn">Nuevos</a>
+          <br>
+          <br>
+          <a class="waves-effect waves-light btn modal-trigger" href="#modal">Agregar Material  </a>
+          <!-- Modal Structure -->
+          <div id="modal" class="modal">
+               <div class="modal-content">
+                   {{> material}}        
+               </div>
+          </div>                    
+      </div>
+    </div>    
+   {{>Template.dynamic template=contentmat}} 
+   <div>
+     {{> materialcurso}} 
+   </div>
                 
-          </div>           
-
-          <div class="col s6">  
-          
-          </div>
-   
-
+  </div>     
 </template>
