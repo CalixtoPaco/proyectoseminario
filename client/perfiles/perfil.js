@@ -1,6 +1,6 @@
 Template.perfil.onRendered(function(){
 	$("select").material_select();
-	$('.moadl').modal();
+	$('.moadl0').modal();
 });
 /*Meteor.subscribe('datos');*/
 Template.perfil.helpers({
