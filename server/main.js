@@ -51,7 +51,8 @@ Meteor.startup(() => {
     },
     "insertchat": function(chatdatos){
       CHAT.insert(chatdatos);
-       return true; }
+       return true; 
+     }
   });
 //Material.remove({});
   Meteor.users.allow({
@@ -85,7 +86,7 @@ Meteor.startup(() => {
 
 
   //------------------------parte del chat
-  Meteor.publishComposite("getConection",function(idUs,idMe){
+  Meteor.publishComposite("getMSN",function(idUs,idMe){
     return {
        find(){
          return CHAT.find(
@@ -111,7 +112,7 @@ Meteor.startup(() => {
        ]
     }
    });
-   Meteor.publish('chatsms', function() {
+   Meteor.publish('michatsms', function() {
      return CHAT.find();
    });
 });
